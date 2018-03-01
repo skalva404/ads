@@ -1,4 +1,4 @@
-package kalva.learnings.trees.binary;
+package kalva.learnings.ads.trees.binary;
 
 import kalva.learnings.ads.TreeNode;
 
