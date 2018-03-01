@@ -1,4 +1,4 @@
-package kalva.learnings.ads;
+package kalva.learnings.ads.tree;
 
 public class TreeNode {
 

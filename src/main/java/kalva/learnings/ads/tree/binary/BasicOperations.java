@@ -1,6 +1,6 @@
-package kalva.learnings.ads.trees.binary;
+package kalva.learnings.ads.tree.binary;
 
-import kalva.learnings.ads.TreeNode;
+import kalva.learnings.ads.tree.TreeNode;
 
 public class BasicOperations {
 
