@@ -1,12 +1,14 @@
 package kalva.learnings.ads.tree.binary;
 
+import static kalva.learnings.ads.tree.TreeNode.createSampleTree;
+
 import kalva.learnings.ads.tree.TreeNode;
 
-public class BasicOperations {
+public class BasicRecursiveOperations {
 
   private TreeNode node;
 
-  public BasicOperations(TreeNode node) {
+  public BasicRecursiveOperations(TreeNode node) {
     this.node = node;
   }
 
@@ -24,7 +26,7 @@ public class BasicOperations {
   }
 
   public static void main(String[] args) {
-    BasicOperations operations = new BasicOperations(TreeNode.createSampleTree());
+    BasicRecursiveOperations operations = new BasicRecursiveOperations(createSampleTree());
     operations.printPreOrder();
   }
 }
