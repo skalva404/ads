@@ -40,10 +40,15 @@ public class TreeNode {
    * *                        1
    * *                     2     3
    * *                   4  5  6  7
+   * *                  8 9     10 11
    */
   public static TreeNode createSampleTree() {
     return new TreeNode(1,
-        new TreeNode(2, new TreeNode(4), new TreeNode(5)),
-        new TreeNode(3, new TreeNode(6), new TreeNode(7)));
+        new TreeNode(2,
+            new TreeNode(4, new TreeNode(8), new TreeNode(9)),
+            new TreeNode(5)),
+        new TreeNode(3,
+            new TreeNode(6),
+            new TreeNode(7, new TreeNode(10), new TreeNode(11))));
   }
 }
