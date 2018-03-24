@@ -23,39 +23,32 @@ public class LevelOrder {
   }
 
   private static void printZigZagOrder(TreeNode node) {
-
-    Stack<TreeNode> ltor = new Stack<>();
-    Stack<TreeNode> rtol = new Stack<>();
-    ltor.add(node);
-
-    while (true) {
-      if (ltor.isEmpty()) {
-        return;
-      }
-      while (!ltor.isEmpty()) {
-        TreeNode poll = ltor.pop();
-        System.out.print(poll.getData() + "\t");
-        if (null != poll.getRight()) {
-          rtol.add(poll.getRight());
-        }
-        if (null != poll.getLeft()) {
-          rtol.add(poll.getLeft());
-        }
-      }
-
-      if (rtol.isEmpty()) {
-        return;
-      }
-      while (!rtol.isEmpty()) {
-        TreeNode pop = rtol.pop();
+    boolean directionflag = false;
+    Stack<TreeNode> stack = new Stack<>();
+    stack.add(node);
+    while (!stack.empty()) {
+      Stack<TreeNode> tempStack = new Stack<>();
+      while (!stack.empty()) {
+        TreeNode pop = stack.pop();
         System.out.print(pop.getData() + "\t");
-        if (null != pop.getLeft()) {
-          ltor.add(pop.getLeft());
-        }
-        if (null != pop.getRight()) {
-          ltor.add(pop.getRight());
+        if (directionflag) {
+          if (null != pop.getLeft()) {
+            tempStack.push(pop.getLeft());
+          }
+          if (null != pop.getRight()) {
+            tempStack.push(pop.getRight());
+          }
+        } else {
+          if (null != pop.getRight()) {
+            tempStack.push(pop.getRight());
+          }
+          if (null != pop.getLeft()) {
+            tempStack.push(pop.getLeft());
+          }
         }
       }
+      directionflag = !directionflag;
+      stack = tempStack;
     }
   }
 
@@ -74,28 +67,28 @@ public class LevelOrder {
     }
   }
 
-  private static void printZigZagOrderRecursive(TreeNode node) {
+  private static void printZigZagOrderRecursive(TreeNode root) {
     int counter = 0;
-    int height = Utils.height(node);
+    int height = Utils.height(root);
     for (int i = 1; i <= height; i++) {
-      printZigZagOrderRecursive(node, i, counter++);
+      printZigZagOrderRecursive(root, i, counter++);
     }
   }
 
   private static void printZigZagOrderRecursive(TreeNode node, int d, int ctr) {
+
     if (null == node) {
       return;
     }
     if (1 == d) {
       System.out.print(node.getData() + "\t");
+    }
+    if (0 != ctr % 2) {
+      printZigZagOrderRecursive(node.getLeft(), d - 1, ctr);
+      printZigZagOrderRecursive(node.getRight(), d - 1, ctr);
     } else {
-      if (0 != ctr % 2) {
-        printZigZagOrderRecursive(node.getLeft(), d - 1, ctr);
-        printZigZagOrderRecursive(node.getRight(), d - 1, ctr);
-      } else {
-        printZigZagOrderRecursive(node.getRight(), d - 1, ctr);
-        printZigZagOrderRecursive(node.getLeft(), d - 1, ctr);
-      }
+      printZigZagOrderRecursive(node.getRight(), d - 1, ctr);
+      printZigZagOrderRecursive(node.getLeft(), d - 1, ctr);
     }
   }
 

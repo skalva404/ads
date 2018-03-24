@@ -6,23 +6,31 @@ import static kalva.learnings.ads.tree.TreeNode.createSampleTree;
 
 import kalva.learnings.ads.tree.TreeNode;
 
-public class BasicIterativeOperations {
+public class IterativeOperations {
 
   private TreeNode node;
 
-  public BasicIterativeOperations(TreeNode node) {
+  public IterativeOperations(TreeNode node) {
     this.node = node;
   }
 
-  public void printPreOrder() {
-    printPreOrder(node);
+  public TreeNode getNode() {
+    return node;
+  }
+
+  void preorder(TreeNode node) {
+    if (node != null) {
+      System.out.print(node.getData() + "\t");
+      preorder(node.getLeft());
+      preorder(node.getRight());
+    }
   }
 
   private void printPreOrder(TreeNode root) {
     if (null == root) {
       return;
     }
-    Stack<TreeNode> stack = new Stack<TreeNode>();
+    Stack<TreeNode> stack = new Stack<>();
     stack.push(root);
     while (!stack.empty()) {
       TreeNode pop = stack.pop();
@@ -37,7 +45,9 @@ public class BasicIterativeOperations {
   }
 
   public static void main(String[] args) {
-    BasicIterativeOperations operations = new BasicIterativeOperations(createSampleTree());
-    operations.printPreOrder();
+    IterativeOperations operations = new IterativeOperations(createSampleTree());
+    operations.printPreOrder(operations.getNode());
+    System.out.println();
+    operations.preorder(operations.getNode());
   }
 }
