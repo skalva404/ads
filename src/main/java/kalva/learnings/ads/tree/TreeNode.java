@@ -1,5 +1,7 @@
 package kalva.learnings.ads.tree;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class TreeNode {
@@ -80,8 +82,35 @@ public class TreeNode {
     return temp;
   }
 
+  static List<Integer> find(TreeNode root, TreeNode node) {
+    if (Objects.equals(root.getData(), node.getData())) {
+      return new ArrayList<>();
+    }
+    List<Integer> result;
+    if (root.left != null) {
+      result = find(root.left, node);
+      if (result != null) {
+        result.add(0, root.getData());
+        return result;
+      }
+    }
+    if (root.right != null) {
+      result = find(root.right, node);
+      if (result != null) {
+        result.add(0, root.getData());
+        return result;
+      }
+    }
+    return null;
+  }
+
   @Override
   public String toString() {
     return "TreeNode{" + data + '}';
+  }
+
+  public static void main(String[] args) {
+    TreeNode sampleTree = TreeNode.createSampleTree();
+    System.out.println(find(sampleTree, new TreeNode(10, null, null)));
   }
 }

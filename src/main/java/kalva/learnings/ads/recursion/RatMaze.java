@@ -1,9 +1,14 @@
-package kalva.learnings.ads.tree.recursion;
+package kalva.learnings.ads.recursion;
 
 public class RatMaze {
 
   static int r = 4;
   static int c = 4;
+  //  static int maze[][] = {
+//      {1, 1, 1, 1},
+//      {0, 0, 0, 1},
+//      {0, 0, 0, 1},
+//      {0, 0, 0, 1}};
   static int maze[][] = {
       {1, 1, 0, 0},
       {1, 1, 1, 1},
@@ -25,23 +30,19 @@ public class RatMaze {
     }
   }
 
-  /* A utility function to check if x,y is valid
-      index for N*N maze */
-  static boolean isSafe(int maze[][], int x, int y) {
-    // if (x,y outside maze) return false
-    return (x >= 0 && x < r && y >= 0 &&
-        y < c && maze[x][y] == 1);
+  static boolean isSafe(int row, int col) {
+    return row < r && col < c && 1 == maze[row][col];
   }
 
-  static boolean solveMaze(int x, int y) {
-    if (x == c - 1 && y == r - 1) {
-      sol[x][y] = 1;
-      return true;
-    }
-    if (!isSafe(maze, x, y)) {
+  private static boolean solveMaze(int x, int y) {
+    if (!isSafe(x, y)) {
       return false;
     }
+
     sol[x][y] = 1;
+    if (x == c - 1 && y == r - 1) {
+      return true;
+    }
     if (solveMaze(x + 1, y)) {
       return true;
     }

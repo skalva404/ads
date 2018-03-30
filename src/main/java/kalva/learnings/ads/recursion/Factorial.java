@@ -1,4 +1,4 @@
-package kalva.learnings.ads.tree.recursion;
+package kalva.learnings.ads.recursion;
 
 public class Factorial {
   public static void main(String[] args) {
