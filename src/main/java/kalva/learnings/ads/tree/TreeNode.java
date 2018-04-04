@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import kalva.learnings.ads.tree.binary.Utils;
+
 public class TreeNode {
 
   private TreeNode left;
@@ -17,6 +19,10 @@ public class TreeNode {
   private TreeNode(Integer data, TreeNode left, TreeNode right) {
     this.left = left;
     this.right = right;
+    this.data = data;
+  }
+
+  public void setData(Integer data) {
     this.data = data;
   }
 
@@ -46,6 +52,17 @@ public class TreeNode {
         new TreeNode(3,
             new TreeNode(6),
             new TreeNode(7, new TreeNode(10), new TreeNode(11))));
+  }
+
+  private static TreeNode leftMost(TreeNode searchNode) {
+    if (null == searchNode) {
+      return null;
+    }
+    TreeNode treeNode = leftMost(searchNode.getLeft());
+    if (null == treeNode) {
+      return searchNode;
+    }
+    return treeNode;
   }
 
   public static TreeNode leftMostNode(TreeNode searchNode) {
@@ -82,7 +99,7 @@ public class TreeNode {
     return temp;
   }
 
-  static List<Integer> find(TreeNode root, TreeNode node) {
+  public static List<Integer> find(TreeNode root, TreeNode node) {
     if (Objects.equals(root.getData(), node.getData())) {
       return new ArrayList<>();
     }
@@ -109,8 +126,40 @@ public class TreeNode {
     return "TreeNode{" + data + '}';
   }
 
+  public void printPreOrder() {
+    _printPreOrder(this);
+  }
+
+  public void printBFS() {
+    for (int i = 1; i <= Utils.height(this); i++) {
+      _printBFS(this, i, 1);
+    }
+  }
+
+  private void _printBFS(TreeNode node, int level, int currentLevel) {
+    if (null == node) {
+      return;
+    }
+    if (level == currentLevel) {
+      System.out.print(node.getData() + "\t");
+    }
+    _printBFS(node.getLeft(), level, currentLevel + 1);
+    _printBFS(node.getRight(), level, currentLevel + 1);
+  }
+
+  private void _printPreOrder(TreeNode node) {
+    if (null == node) {
+      return;
+    }
+    _printPreOrder(node.getLeft());
+    System.out.print(node.getData() + "\t");
+    _printPreOrder(node.getRight());
+  }
+
   public static void main(String[] args) {
     TreeNode sampleTree = TreeNode.createSampleTree();
-    System.out.println(find(sampleTree, new TreeNode(10, null, null)));
+    System.out.println(TreeNode.leftMost(sampleTree));
+    System.out.println(TreeNode.leftMostNode(sampleTree));
+//    System.out.println(find(sampleTree, new TreeNode(10, null, null)));
   }
 }

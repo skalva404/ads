@@ -40,6 +40,5 @@ public class RecursiveOperations {
 
   public static void main(String[] args) {
     RecursiveOperations operations = new RecursiveOperations(createSampleTree());
-    operations.printPreOrder();
   }
 }
