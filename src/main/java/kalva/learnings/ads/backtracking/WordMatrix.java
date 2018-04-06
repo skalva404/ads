@@ -1,4 +1,4 @@
-package kalva.learnings.ads.recursion;
+package kalva.learnings.ads.backtracking;
 
 /**
  * https://algorithms.tutorialhorizon.com/backtracking-search-a-word-in-a-matrix/

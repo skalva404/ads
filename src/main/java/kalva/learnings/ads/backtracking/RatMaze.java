@@ -1,4 +1,4 @@
-package kalva.learnings.ads.recursion;
+package kalva.learnings.ads.backtracking;
 
 public class RatMaze {
 

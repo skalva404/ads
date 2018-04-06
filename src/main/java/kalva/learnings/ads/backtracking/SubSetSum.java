@@ -1,4 +1,4 @@
-package kalva.learnings.ads.recursion;
+package kalva.learnings.ads.backtracking;
 
 /**
  * https://algorithms.tutorialhorizon.com/dynamic-programming-subset-sum-problem/
