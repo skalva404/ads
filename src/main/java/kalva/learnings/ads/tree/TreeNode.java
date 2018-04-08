@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import kalva.learnings.ads.tree.binary.Utils;
+import static kalva.learnings.ads.Utils.print;
+
+import kalva.learnings.ads.Utils;
 
 public class TreeNode {
 
@@ -12,11 +14,11 @@ public class TreeNode {
   private TreeNode right;
   private Integer data;
 
-  private TreeNode(Integer data) {
+  public TreeNode(Integer data) {
     this.data = data;
   }
 
-  private TreeNode(Integer data, TreeNode left, TreeNode right) {
+  public TreeNode(Integer data, TreeNode left, TreeNode right) {
     this.left = left;
     this.right = right;
     this.data = data;
@@ -28,6 +30,14 @@ public class TreeNode {
 
   public TreeNode getLeft() {
     return left;
+  }
+
+  public void setLeft(TreeNode left) {
+    this.left = left;
+  }
+
+  public void setRight(TreeNode right) {
+    this.right = right;
   }
 
   public TreeNode getRight() {
@@ -66,7 +76,7 @@ public class TreeNode {
   }
 
   public static TreeNode leftMostNode(TreeNode searchNode) {
-    TreeNode temp = searchNode.getLeft();
+    TreeNode temp = searchNode;
     while (null != temp && null != temp.getLeft()) {
       temp = temp.getLeft();
     }
@@ -126,8 +136,8 @@ public class TreeNode {
     return "TreeNode{" + data + '}';
   }
 
-  public void printPreOrder() {
-    _printPreOrder(this);
+  public void printInOrder() {
+    _printInOrder(this);
   }
 
   public void printBFS() {
@@ -140,20 +150,21 @@ public class TreeNode {
     if (null == node) {
       return;
     }
-    if (level == currentLevel) {
-      System.out.print(node.getData() + "\t");
+    if (level == currentLevel && null != node.data) {
+      print(node.data);
+      return;
     }
     _printBFS(node.getLeft(), level, currentLevel + 1);
     _printBFS(node.getRight(), level, currentLevel + 1);
   }
 
-  private void _printPreOrder(TreeNode node) {
+  private void _printInOrder(TreeNode node) {
     if (null == node) {
       return;
     }
-    _printPreOrder(node.getLeft());
+    _printInOrder(node.getLeft());
     System.out.print(node.getData() + "\t");
-    _printPreOrder(node.getRight());
+    _printInOrder(node.getRight());
   }
 
   public static void main(String[] args) {
