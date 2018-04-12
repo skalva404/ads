@@ -20,7 +20,7 @@ public class RatMaze {
       {0, 0, 0, 0},
       {0, 0, 0, 0}};
 
-  /* A utility function to print solution matrix
+  /* A utility function to printInt solution matrix
        sol[N][N] */
   static void printSolution(int sol[][]) {
     for (int i = 0; i < r; i++) {

@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import static kalva.learnings.ads.Utils.print;
-
 import kalva.learnings.ads.Utils;
 
 public class TreeNode {
 
   private TreeNode left;
   private TreeNode right;
+  private TreeNode sibling;
   private Integer data;
 
   public TreeNode(Integer data) {
@@ -46,6 +45,14 @@ public class TreeNode {
 
   public Integer getData() {
     return data;
+  }
+
+  public TreeNode getSibling() {
+    return sibling;
+  }
+
+  public void setSibling(TreeNode sibling) {
+    this.sibling = sibling;
   }
 
   /**
@@ -133,7 +140,9 @@ public class TreeNode {
 
   @Override
   public String toString() {
-    return "TreeNode{" + data + '}';
+    return "{" + data +
+        ((null != sibling) ? " -> " + sibling.data : "")
+        + '}';
   }
 
   public void printInOrder() {
@@ -151,7 +160,7 @@ public class TreeNode {
       return;
     }
     if (level == currentLevel && null != node.data) {
-      print(node.data);
+      System.out.print(node + "  ");
       return;
     }
     _printBFS(node.getLeft(), level, currentLevel + 1);

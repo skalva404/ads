@@ -13,7 +13,7 @@ public class Utils {
     return 1 + Math.max(height(root.getLeft()), height(root.getRight()));
   }
 
-  public static void print(Integer data) {
+  public static void printInt(Integer data) {
     DecimalFormat twodigits = new DecimalFormat("00");
     System.out.print(twodigits.format(data) + "  ");
   }
