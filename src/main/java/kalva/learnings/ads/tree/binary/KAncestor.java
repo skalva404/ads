@@ -2,18 +2,18 @@ package kalva.learnings.ads.tree.binary;
 
 import java.util.Objects;
 
-import kalva.learnings.ads.tree.TreeNode;
+import kalva.learnings.ads.tree.Node;
 
 public class KAncestor {
 
   static int k = 3;
 
   public static void main(String[] args) {
-    kAncestor(TreeNode.createSampleTree(), 9);
-    ancestor(TreeNode.createSampleTree(), 9);
+    kAncestor(Node.createSampleTree(), 9);
+    ancestor(Node.createSampleTree(), 9);
   }
 
-  private static boolean ancestor(TreeNode root, int value) {
+  private static boolean ancestor(Node root, int value) {
     if (null == root) {
       return false;
     }
@@ -27,7 +27,7 @@ public class KAncestor {
     return false;
   }
 
-  private static TreeNode kAncestor(TreeNode root, int value) {
+  private static Node kAncestor(Node root, int value) {
     if (null == root) {
       return null;
     }

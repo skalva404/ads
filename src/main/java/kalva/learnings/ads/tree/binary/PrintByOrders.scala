@@ -1,21 +1,21 @@
 package kalva.learnings.ads.tree.binary
 
 import kalva.learnings.ads.Utils
-import kalva.learnings.ads.tree.TreeNode
+import kalva.learnings.ads.tree.Node
 
 object PrintByOrders extends App {
 
-  println(printLevelOrder(TreeNode.createSampleTree()))
-  println(printZigZagOrder(TreeNode.createSampleTree()))
+  println(printLevelOrder(Node.createSampleTree()))
+  println(printZigZagOrder(Node.createSampleTree()))
 
-  def printZigZagOrder(root: TreeNode): Unit = {
+  def printZigZagOrder(root: Node): Unit = {
     val height = Utils.height(root)
     for (i <- 0 until height) {
       _printZigZagOrder(root, i, 0)
     }
   }
 
-  def _printZigZagOrder(root: TreeNode, level: Int, currentLevel: Int): Unit = {
+  def _printZigZagOrder(root: Node, level: Int, currentLevel: Int): Unit = {
     if (null == root) {
       return
     }
@@ -32,14 +32,14 @@ object PrintByOrders extends App {
     }
   }
 
-  def printLevelOrder(root: TreeNode): Unit = {
+  def printLevelOrder(root: Node): Unit = {
     val height = Utils.height(root)
     for (i <- 0 until height) {
       _printLevelOrder(root, i, 0)
     }
   }
 
-  def _printLevelOrder(root: TreeNode, level: Int, currentLevel: Int): Unit = {
+  def _printLevelOrder(root: Node, level: Int, currentLevel: Int): Unit = {
     if (null == root) {
       return
     }

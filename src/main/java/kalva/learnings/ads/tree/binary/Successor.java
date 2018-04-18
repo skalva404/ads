@@ -2,12 +2,12 @@ package kalva.learnings.ads.tree.binary;
 
 import java.util.Objects;
 
-import static kalva.learnings.ads.tree.TreeNode.createSampleTree;
-import static kalva.learnings.ads.tree.TreeNode.findNode;
-import static kalva.learnings.ads.tree.TreeNode.leftMostNode;
-import static kalva.learnings.ads.tree.TreeNode.rightMostNode;
+import static kalva.learnings.ads.tree.Node.createSampleTree;
+import static kalva.learnings.ads.tree.Node.findNode;
+import static kalva.learnings.ads.tree.Node.leftMostNode;
+import static kalva.learnings.ads.tree.Node.rightMostNode;
 
-import kalva.learnings.ads.tree.TreeNode;
+import kalva.learnings.ads.tree.Node;
 
 /**
  * We need to take care of 3 cases for any node to find its inorder successor as described below:
@@ -31,7 +31,7 @@ import kalva.learnings.ads.tree.TreeNode;
  */
 public class Successor {
 
-  static TreeNode found;
+  static Node found;
 
   public static void main(String[] args) {
 
@@ -52,9 +52,9 @@ public class Successor {
     found = null;
   }
 
-  private static int inorderSuccessor(TreeNode rootNode, int value) {
-    TreeNode temp;
-    TreeNode searchNode = findNode(rootNode, value);
+  private static int inorderSuccessor(Node rootNode, int value) {
+    Node temp;
+    Node searchNode = findNode(rootNode, value);
     if (null != searchNode.getRight()) {
       temp = leftMostNode(searchNode.getRight());
     } else {
@@ -74,7 +74,7 @@ public class Successor {
     return -1;
   }
 
-  private static TreeNode inorderSuccessorWhenRightIsNull(TreeNode root, int value) {
+  private static Node inorderSuccessorWhenRightIsNull(Node root, int value) {
     if (null == root) {
       return null;
     }
@@ -82,7 +82,7 @@ public class Successor {
       return root;
     }
 
-    TreeNode temp;
+    Node temp;
     if (null == (temp = inorderSuccessorWhenRightIsNull(root.getLeft(), value)) &&
         (null == (temp = inorderSuccessorWhenRightIsNull(root.getRight(), value)))) {
       return null;

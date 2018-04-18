@@ -1,10 +1,10 @@
 package kalva.learnings.ads.tree.binary
 
-import kalva.learnings.ads.tree.TreeNode
+import kalva.learnings.ads.tree.Node
 
 object Siblings extends App {
 
-  def createSublings(root: TreeNode): Unit = {
+  def createSublings(root: Node): Unit = {
     if (null == root) {
       return
     }
@@ -18,7 +18,7 @@ object Siblings extends App {
     createSublings(root.getRight)
   }
 
-  val tree = TreeNode.createSampleTree()
+  val tree = Node.createSampleTree()
   tree printBFS()
   createSublings(tree)
   println()

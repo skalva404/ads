@@ -1,12 +1,12 @@
 package kalva.learnings.ads.tree.binary
 
-import kalva.learnings.ads.tree.TreeNode
+import kalva.learnings.ads.tree.{Node}
 
 object InorderSuccessor extends App {
 
   var found: Boolean = false
 
-  def findInorderSuccessor(root: TreeNode, value: Int): TreeNode = {
+  def findInorderSuccessor(root: Node, value: Int): Node = {
     if (null == root) {
       return null
     }
@@ -23,7 +23,7 @@ object InorderSuccessor extends App {
     findInorderSuccessor(root.getRight, value)
   }
 
-  def findInorderLeafNodesSuccessors(root: TreeNode): TreeNode = {
+  def findInorderLeafNodesSuccessors(root: Node): Node = {
     if (null == root) {
       return null
     }
@@ -39,16 +39,16 @@ object InorderSuccessor extends App {
   }
 
   found = false
-  findInorderSuccessor(TreeNode.createSampleTree(), 8)
+  findInorderSuccessor(Node.createSampleTree(), 8)
   found = false
-  findInorderSuccessor(TreeNode.createSampleTree(), 9)
+  findInorderSuccessor(Node.createSampleTree(), 9)
   found = false
-  findInorderSuccessor(TreeNode.createSampleTree(), 5)
+  findInorderSuccessor(Node.createSampleTree(), 5)
   found = false
-  findInorderSuccessor(TreeNode.createSampleTree(), 6)
+  findInorderSuccessor(Node.createSampleTree(), 6)
   found = false
-  findInorderSuccessor(TreeNode.createSampleTree(), 10)
+  findInorderSuccessor(Node.createSampleTree(), 10)
   println()
   found = false
-  findInorderLeafNodesSuccessors(TreeNode.createSampleTree())
+  findInorderLeafNodesSuccessors(Node.createSampleTree())
 }

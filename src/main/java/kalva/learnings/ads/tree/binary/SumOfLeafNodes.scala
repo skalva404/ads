@@ -1,10 +1,10 @@
 package kalva.learnings.ads.tree.binary
 
-import kalva.learnings.ads.tree.TreeNode
+import kalva.learnings.ads.tree.Node
 
 object SumOfLeafNodes extends App {
 
-  def sum(root: TreeNode): Integer = {
+  def sum(root: Node): Integer = {
     if (null == root) {
       return 0
     }
@@ -14,5 +14,5 @@ object SumOfLeafNodes extends App {
     sum(root.getLeft) + sum(root.getRight)
   }
 
-  println(sum(TreeNode.createSampleTree()))
+  println(sum(Node.createSampleTree()))
 }

@@ -1,16 +1,15 @@
 package kalva.learnings.ads.tree.bst
 
-import kalva.learnings.ads.tree.TreeNode
-import kalva.learnings.ads.tree.TreeNode.leftMostNode
+import kalva.learnings.ads.tree.Node
 
 object BSTOperations extends App {
 
   testDelete()
 
-  def insert(root: Option[TreeNode], value: Integer): TreeNode = {
+  def insert(root: Option[Node], value: Integer): Node = {
     val node = root.get
     if (null == node) {
-      return new TreeNode(value, null, null)
+      return new Node(value, null, null)
     }
     if (value < root.get.getData) {
       root.get.setLeft(insert(Some(root.get.getLeft), value))
@@ -21,7 +20,7 @@ object BSTOperations extends App {
     root.get
   }
 
-  def delete(root: Some[TreeNode], key: Int): TreeNode = {
+  def delete(root: Some[Node], key: Int): Node = {
     if (null == root || null == root.get) {
       return null
     }
@@ -35,7 +34,7 @@ object BSTOperations extends App {
       } else if (null == root.get.getRight) {
         return root.get.getLeft
       }
-      root.get.setData(leftMostNode(root.get.getRight).getData)
+      root.get.setData(Node.leftMostNode(root.get.getRight).getData)
       root.get.setRight(delete(Some(root.get.getRight), root.get.getData))
     }
     root.get
@@ -74,8 +73,8 @@ object BSTOperations extends App {
     println()
   }
 
-  def sampleDate(): TreeNode = {
-    val root: TreeNode = new TreeNode(50, null, null)
+  def sampleDate(): Node = {
+    val root: Node = new Node(50, null, null)
     insert(Some(root), 30)
     insert(Some(root), 70)
     insert(Some(root), 20)

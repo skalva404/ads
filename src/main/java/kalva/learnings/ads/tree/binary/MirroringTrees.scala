@@ -1,12 +1,12 @@
 package kalva.learnings.ads.tree.binary
 
-import kalva.learnings.ads.tree.TreeNode
+import kalva.learnings.ads.tree.{Node}
 
 object MirroringTrees extends App {
 
-  val root = TreeNode.createSampleTree()
-  var mirrorRoot = TreeNode.createSampleTree()
-  var mirrorRoot1 = new TreeNode(root.getData, null, null)
+  val root = Node.createSampleTree()
+  var mirrorRoot = Node.createSampleTree()
+  var mirrorRoot1 = new Node(root.getData, null, null)
   root.printBFS()
 
   println()
@@ -23,7 +23,7 @@ object MirroringTrees extends App {
   println()
   println(isMirror(root, mirrorRoot1))
 
-  def mirrorTree(root: TreeNode): Unit = {
+  def mirrorTree(root: Node): Unit = {
 
     if (null == root) {
       return
@@ -35,21 +35,21 @@ object MirroringTrees extends App {
     mirrorTree(root.getRight)
   }
 
-  def mirrorTree(root: TreeNode, mirror: TreeNode): Unit = {
+  def mirrorTree(root: Node, mirror: Node): Unit = {
     if (null == root) {
       return
     }
     if (null != root.getLeft) {
-      mirror.setRight(new TreeNode(root.getLeft.getData, null, null))
+      mirror.setRight(new Node(root.getLeft.getData, null, null))
     }
     if (null != root.getRight) {
-      mirror.setLeft(new TreeNode(root.getRight.getData, null, null))
+      mirror.setLeft(new Node(root.getRight.getData, null, null))
     }
     mirrorTree(root.getLeft, mirror.getRight)
     mirrorTree(root.getRight, mirror.getLeft)
   }
 
-  def isMirror(thiz: TreeNode, that: TreeNode): Boolean = {
+  def isMirror(thiz: Node, that: Node): Boolean = {
     if (null == thiz && null == that) {
       return true
     }

@@ -1,24 +1,24 @@
 package kalva.learnings.ads.tree.binary
 
-import kalva.learnings.ads.tree.TreeNode
+import kalva.learnings.ads.tree.Node
 
 object DeepestLeftNode extends App {
 
   var dlLevel: Int = 0
-  var dlNode: TreeNode = _
+  var dlNode: Node = _
 
   deepestLeftNode(createSample(), 0, left = false)
   println(dlNode)
 
-  def createSample(): TreeNode = {
-    new TreeNode(1,
-      new TreeNode(2,
-        new TreeNode(4, null, null),
-        new TreeNode(5, new TreeNode(8), null)),
-      new TreeNode(3, new TreeNode(6), new TreeNode(7, null, null)))
+  def createSample(): Node = {
+    new Node(1,
+      new Node(2,
+        new Node(4, null, null),
+        new Node(5, new Node(8), null)),
+      new Node(3, new Node(6), new Node(7, null, null)))
   }
 
-  def deepestLeftNode(root: TreeNode, level: Int, left: Boolean): Unit = {
+  def deepestLeftNode(root: Node, level: Int, left: Boolean): Unit = {
     if (null == root) {
       return
     }

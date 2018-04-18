@@ -2,16 +2,16 @@ package kalva.learnings.ads.tree.binary;
 
 import java.util.Objects;
 
-import static kalva.learnings.ads.tree.TreeNode.createSampleTree;
-import static kalva.learnings.ads.tree.TreeNode.findNode;
-import static kalva.learnings.ads.tree.TreeNode.leftMostNode;
-import static kalva.learnings.ads.tree.TreeNode.rightMostNode;
+import static kalva.learnings.ads.tree.Node.createSampleTree;
+import static kalva.learnings.ads.tree.Node.findNode;
+import static kalva.learnings.ads.tree.Node.leftMostNode;
+import static kalva.learnings.ads.tree.Node.rightMostNode;
 
-import kalva.learnings.ads.tree.TreeNode;
+import kalva.learnings.ads.tree.Node;
 
 public class Predecessor {
 
-  static TreeNode found = null;
+  static Node found = null;
 
   public static void main(String[] args) {
     RecursiveOperations operations = new RecursiveOperations(createSampleTree());
@@ -37,10 +37,10 @@ public class Predecessor {
    * @param value
    * @return
    */
-  private static int inorderPredecessor(TreeNode rootNode, int value) {
+  private static int inorderPredecessor(Node rootNode, int value) {
 
-    TreeNode temp = null;
-    TreeNode searchNode = findNode(rootNode, value);
+    Node temp = null;
+    Node searchNode = findNode(rootNode, value);
 
     //Case-1: if it has, rigt most of the left node
     if (null != searchNode.getLeft()) {
@@ -63,14 +63,14 @@ public class Predecessor {
     return -1;
   }
 
-  private static TreeNode inorderPredecessorWhenLeftIsNull(TreeNode root, int value) {
+  private static Node inorderPredecessorWhenLeftIsNull(Node root, int value) {
     if (null == root) {
       return null;
     }
     if (Objects.equals(root.getData(), value)) {
       return root;
     }
-    TreeNode temp;
+    Node temp;
     if (null == (temp = inorderPredecessorWhenLeftIsNull(root.getLeft(), value)) &&
         null == (temp = inorderPredecessorWhenLeftIsNull(root.getRight(), value))) {
       return null;

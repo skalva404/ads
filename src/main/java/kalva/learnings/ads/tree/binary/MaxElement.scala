@@ -2,13 +2,13 @@ package kalva.learnings.ads.tree.binary
 
 import java.lang.Math.max
 
-import kalva.learnings.ads.tree.TreeNode
+import kalva.learnings.ads.tree.Node
 
 object MaxElement extends App {
 
-  println(maxNode(TreeNode.createSampleTree()))
+  println(maxNode(Node.createSampleTree()))
 
-  def maxNode(root: TreeNode): Int = {
+  def maxNode(root: Node): Int = {
     if (null == root) {
       return 0
     }

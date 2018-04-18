@@ -2,15 +2,15 @@ package kalva.learnings.ads.tree.binary
 
 import java.util
 
-import kalva.learnings.ads.tree.TreeNode
+import kalva.learnings.ads.tree.{Node}
 
 object SearchNode extends App {
 
-  println(recusive(TreeNode.createSampleTree(), 10))
-  println(iterative(TreeNode.createSampleTree(), 10))
+  println(recusive(Node.createSampleTree(), 10))
+  println(iterative(Node.createSampleTree(), 10))
 
-  def iterative(root: TreeNode, value: Int): TreeNode = {
-    val queue: util.Queue[TreeNode] = new util.LinkedList()
+  def iterative(root: Node, value: Int): Node = {
+    val queue: util.Queue[Node] = new util.LinkedList()
     queue.add(root)
     while (!queue.isEmpty) {
       val node = queue.poll()
@@ -27,14 +27,14 @@ object SearchNode extends App {
     null
   }
 
-  def recusive(root: TreeNode, value: Int): TreeNode = {
+  def recusive(root: Node, value: Int): Node = {
     if (null == root) {
       return null
     }
     if (value == root.getData) {
       return root
     }
-    var temp: TreeNode = null
+    var temp: Node = null
     if (null == {
       temp = recusive(root.getLeft, value)
       temp

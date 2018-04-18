@@ -3,8 +3,10 @@ package kalva.learnings.ads.backtracking;
 public class Permutations {
 
   public static void main(String[] args) {
-    permute("ABCD", 0);
+    permute("ABC", 0);
   }
+
+  static boolean mutate = true;
 
   private static void permute(String str, int left) {
     if (left == str.length() - 1) {

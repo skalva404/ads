@@ -2,14 +2,14 @@ package kalva.learnings.ads.tree.binary;
 
 import java.util.List;
 
-import kalva.learnings.ads.tree.TreeNode;
+import kalva.learnings.ads.tree.Node;
 
 public class Diameter {
 
   public static void main(String[] args) {
-    TreeNode node = TreeNode.createSampleTree();
-    List<Integer> leftPath = TreeNode.find(node, TreeNode.leftMostNode(node));
-    List<Integer> rightPath = TreeNode.find(node, TreeNode.rightMostNode(node));
+    Node node = Node.createSampleTree();
+    List<Integer> leftPath = Node.find(node, Node.leftMostNode(node));
+    List<Integer> rightPath = Node.find(node, Node.rightMostNode(node));
     assert leftPath != null;
     assert rightPath != null;
     System.out.println(leftPath.size() + rightPath.size() + 1);

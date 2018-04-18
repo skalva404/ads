@@ -1,15 +1,15 @@
 package kalva.learnings.ads.tree.binary;
 
-import kalva.learnings.ads.tree.TreeNode;
+import kalva.learnings.ads.tree.Node;
 
 /**
  * https://algorithms.tutorialhorizon.com/convert-binary-tree-to-its-sum-tree/
  */
 public class SumTree {
 
-  private static TreeNode sampleTree = TreeNode.createSampleTree();
+  private static Node sampleTree = Node.createSampleTree();
 
-  private static int findSum(TreeNode node) {
+  private static int findSum(Node node) {
     if (null == node) {
       return 0;
     }

@@ -1,10 +1,10 @@
 package kalva.learnings.ads.tree.binary;
 
-import kalva.learnings.ads.tree.TreeNode;
+import kalva.learnings.ads.tree.Node;
 
 public class LeftSum {
 
-  private static int leftSum(TreeNode node) {
+  private static int leftSum(Node node) {
     if (null == node || null == node.getLeft()) {
       return 0;
     }
@@ -12,6 +12,6 @@ public class LeftSum {
   }
 
   public static void main(String[] args) {
-    System.out.println(leftSum(TreeNode.createSampleTree()));
+    System.out.println(leftSum(Node.createSampleTree()));
   }
 }

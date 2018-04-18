@@ -1,6 +1,6 @@
 package kalva.learnings.ads.tree.bst
 
-import kalva.learnings.ads.tree.TreeNode
+import kalva.learnings.ads.tree.{Node}
 import kalva.learnings.ads.tree.bst.BSTOperations.insert
 
 /**
@@ -8,7 +8,7 @@ import kalva.learnings.ads.tree.bst.BSTOperations.insert
   */
 object GreaterSum extends App {
 
-  def greaterSum(root: TreeNode, accumulator: Array[Int]): Unit = {
+  def greaterSum(root: Node, accumulator: Array[Int]): Unit = {
     if (null == root) {
       return
     }
@@ -22,8 +22,8 @@ object GreaterSum extends App {
     })
   }
 
-  def sampleDate(): Some[TreeNode] = {
-    val root = new TreeNode(10, null, null)
+  def sampleDate(): Some[Node] = {
+    val root = new Node(10, null, null)
     insert(Some(root), 5)
     insert(Some(root), 15)
     insert(Some(root), 2)

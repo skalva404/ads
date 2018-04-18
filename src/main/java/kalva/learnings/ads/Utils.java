@@ -2,11 +2,11 @@ package kalva.learnings.ads;
 
 import java.text.DecimalFormat;
 
-import kalva.learnings.ads.tree.TreeNode;
+import kalva.learnings.ads.tree.Node;
 
 public class Utils {
 
-  public static int height(TreeNode root) {
+  public static int height(Node root) {
     if (null == root) {
       return 0;
     }
@@ -19,6 +19,6 @@ public class Utils {
   }
 
   public static void main(String[] args) {
-    System.out.println(height(TreeNode.createSampleTree()));
+    System.out.println(height(Node.createSampleTree()));
   }
 }

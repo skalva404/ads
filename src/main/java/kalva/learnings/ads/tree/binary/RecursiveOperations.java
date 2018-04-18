@@ -1,14 +1,14 @@
 package kalva.learnings.ads.tree.binary;
 
-import static kalva.learnings.ads.tree.TreeNode.createSampleTree;
+import static kalva.learnings.ads.tree.Node.createSampleTree;
 
-import kalva.learnings.ads.tree.TreeNode;
+import kalva.learnings.ads.tree.Node;
 
 public class RecursiveOperations {
 
-  private TreeNode node;
+  private Node node;
 
-  public RecursiveOperations(TreeNode node) {
+  public RecursiveOperations(Node node) {
     this.node = node;
   }
 
@@ -20,7 +20,7 @@ public class RecursiveOperations {
     printPreOrder(node);
   }
 
-  private void inOrder(TreeNode root) {
+  private void inOrder(Node root) {
     if (null == root) {
       return;
     }
@@ -29,7 +29,7 @@ public class RecursiveOperations {
     inOrder(root.getRight());
   }
 
-  private void printPreOrder(TreeNode root) {
+  private void printPreOrder(Node root) {
     if (null == root) {
       return;
     }

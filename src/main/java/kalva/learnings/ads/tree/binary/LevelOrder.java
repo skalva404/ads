@@ -4,10 +4,10 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.Stack;
 
-import static kalva.learnings.ads.tree.TreeNode.createSampleTree;
+import static kalva.learnings.ads.tree.Node.createSampleTree;
 
 import kalva.learnings.ads.Utils;
-import kalva.learnings.ads.tree.TreeNode;
+import kalva.learnings.ads.tree.Node;
 
 public class LevelOrder {
 
@@ -23,14 +23,14 @@ public class LevelOrder {
     printZigZagOrderRecursive(createSampleTree());
   }
 
-  private static void printZigZagOrder(TreeNode node) {
+  private static void printZigZagOrder(Node node) {
     boolean directionflag = false;
-    Stack<TreeNode> stack = new Stack<>();
+    Stack<Node> stack = new Stack<>();
     stack.add(node);
     while (!stack.empty()) {
-      Stack<TreeNode> tempStack = new Stack<>();
+      Stack<Node> tempStack = new Stack<>();
       while (!stack.empty()) {
-        TreeNode pop = stack.pop();
+        Node pop = stack.pop();
         System.out.print(pop.getData() + "\t");
         if (directionflag) {
           if (null != pop.getLeft()) {
@@ -53,11 +53,11 @@ public class LevelOrder {
     }
   }
 
-  private static void printLevelOrder(TreeNode node) {
-    Queue<TreeNode> queue = new ArrayDeque<>();
+  private static void printLevelOrder(Node node) {
+    Queue<Node> queue = new ArrayDeque<>();
     queue.add(node);
     while (!queue.isEmpty()) {
-      TreeNode poll = queue.poll();
+      Node poll = queue.poll();
       System.out.print(poll.getData() + "\t");
       if (null != poll.getLeft()) {
         queue.add(poll.getLeft());
@@ -68,7 +68,7 @@ public class LevelOrder {
     }
   }
 
-  private static void printZigZagOrderRecursive(TreeNode root) {
+  private static void printZigZagOrderRecursive(Node root) {
     int counter = 0;
     int height = Utils.height(root);
     for (int i = 1; i <= height; i++) {
@@ -76,7 +76,7 @@ public class LevelOrder {
     }
   }
 
-  private static void printZigZagOrderRecursive(TreeNode node, int d, int ctr) {
+  private static void printZigZagOrderRecursive(Node node, int d, int ctr) {
 
     if (null == node) {
       return;
@@ -93,14 +93,14 @@ public class LevelOrder {
     }
   }
 
-  private static void printLevelOrderRecursive(TreeNode node) {
+  private static void printLevelOrderRecursive(Node node) {
     int height = Utils.height(node);
     for (int i = 1; i <= height; i++) {
       printLevelOrderRecursive(node, i);
     }
   }
 
-  private static void printLevelOrderRecursive(TreeNode node, int d) {
+  private static void printLevelOrderRecursive(Node node, int d) {
     if (null == node) {
       return;
     }

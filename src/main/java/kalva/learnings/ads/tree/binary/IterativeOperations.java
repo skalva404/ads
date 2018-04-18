@@ -2,23 +2,23 @@ package kalva.learnings.ads.tree.binary;
 
 import java.util.Stack;
 
-import static kalva.learnings.ads.tree.TreeNode.createSampleTree;
+import static kalva.learnings.ads.tree.Node.createSampleTree;
 
-import kalva.learnings.ads.tree.TreeNode;
+import kalva.learnings.ads.tree.Node;
 
 public class IterativeOperations {
 
-  private TreeNode node;
+  private Node node;
 
-  public IterativeOperations(TreeNode node) {
+  public IterativeOperations(Node node) {
     this.node = node;
   }
 
-  public TreeNode getNode() {
+  public Node getNode() {
     return node;
   }
 
-  void preorder(TreeNode node) {
+  void preorder(Node node) {
     if (node != null) {
       System.out.print(node.getData() + "\t");
       preorder(node.getLeft());
@@ -26,14 +26,14 @@ public class IterativeOperations {
     }
   }
 
-  private void printPreOrder(TreeNode root) {
+  private void printPreOrder(Node root) {
     if (null == root) {
       return;
     }
-    Stack<TreeNode> stack = new Stack<>();
+    Stack<Node> stack = new Stack<>();
     stack.push(root);
     while (!stack.empty()) {
-      TreeNode pop = stack.pop();
+      Node pop = stack.pop();
       System.out.print(pop.getData() + "\t");
       if (null != pop.getRight()) {
         stack.push(pop.getRight());
