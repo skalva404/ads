@@ -29,39 +29,42 @@ public class MaxSumPathBetweenLeaves {
     if (null == root.getLeft() && null == root.getRight()) {
       return root.getData();
     }
-
-    int ls = sumPathLeafNodes(root.left);
-    int rs = sumPathLeafNodes(root.right);
+    int ls = sumPathLeafNodes(root.getLeft());
+    int rs = sumPathLeafNodes(root.getRight());
     if (null != root.getLeft() && null != root.getRight()) {
       result = Math.max(result, root.data + ls + rs);
-      return Math.max(ls, rs) + root.data;
+      return root.data + Math.max(ls, rs);
     }
-    return root.getData() + (null == root.getLeft() ? rs : ls);
+    return root.getData() + (null != root.getLeft() ? root.getLeft().data : root.getRight().data);
   }
 
   public static void main(String[] args) {
 //    findMaxSumToLeaf(createSampleTree(), 0, "");
 //    System.out.println(sum);
 //    System.out.println(pathToLeaf);
-    sumPathLeafNodes(createSampleTree());
+    sumPathLeafNodes(createSampleTree()); //24
     System.out.println(result);
   }
 
   public static Node createSampleTree() {
-    Node root = new Node(-15);
-    root.left = newNode(5);
-    root.right = newNode(6);
-    root.left.left = newNode(-8);
-    root.left.right = newNode(1);
-    root.left.left.left = newNode(2);
-    root.left.left.right = newNode(6);
-    root.right.left = newNode(3);
-    root.right.right = newNode(9);
-    root.right.right.right = newNode(0);
-    root.right.right.right.left = newNode(4);
-    root.right.right.right.right = newNode(-1);
-    root.right.right.right.right.left = newNode(10);
-    return root;
+    Node root = new Node(-5);
+    root.left = new Node(1);
+    root.right = new Node(4);
+    root.left.left = new Node(-6);
+    root.left.right = new Node(5);
+    root.left.right.left = new Node(-2);
+    root.left.right.right = new Node(3);
+    root.left.left.left = new Node(9);
+    root.left.left.right = new Node(10);
+    root.right.left = new Node(11);
+    root.right.right = new Node(-2);
+    root.right.right.right = new Node(-8);
+    root.right.right.left = new Node(7);
+    root.right.right.right.left = new Node(1);
+    root.right.right.right.right = new Node(7);
+    root.right.right.right.right.left = new Node(12);
+    return Node.createSampleTree();
+//    return root;
   }
 
   private static Node newNode(int i) {
