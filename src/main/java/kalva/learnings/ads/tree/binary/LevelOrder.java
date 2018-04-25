@@ -31,7 +31,7 @@ public class LevelOrder {
       Stack<Node> tempStack = new Stack<>();
       while (!stack.empty()) {
         Node pop = stack.pop();
-        System.out.print(pop.getData() + "\t");
+        System.out.print(pop + "\t");
         if (directionflag) {
           if (null != pop.getLeft()) {
             tempStack.push(pop.getLeft());
@@ -50,6 +50,7 @@ public class LevelOrder {
       }
       directionflag = !directionflag;
       stack = tempStack;
+      System.out.println();
     }
   }
 

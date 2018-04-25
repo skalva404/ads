@@ -4,7 +4,28 @@ import kalva.learnings.ads.tree.Node
 
 object BSTOperations extends App {
 
-  testDelete()
+  //  testDelete()
+
+  var root = new Node(4)
+  root.left = new Node(2)
+  root.right = new Node(5)
+  root.left.left = new Node(1)
+  root.left.right = new Node(3)
+  root.printInOrder()
+  println()
+  println(isBST(Some(root), Integer.MIN_VALUE, Integer.MAX_VALUE))
+
+  def isBST(root: Option[Node], min: Integer, max: Integer): Boolean = {
+    if (null == root.get) {
+      return true
+    }
+    if (root.get.getData < min || root.get.data > max) {
+      return false
+    }
+
+    isBST(Some(root.get.getLeft), min, root.get.data - 1) &&
+      isBST(Some(root.get.getRight), root.get.data + 1, max)
+  }
 
   def insert(root: Option[Node], value: Integer): Node = {
     val node = root.get

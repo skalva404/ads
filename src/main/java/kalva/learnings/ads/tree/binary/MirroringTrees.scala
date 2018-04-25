@@ -1,6 +1,6 @@
 package kalva.learnings.ads.tree.binary
 
-import kalva.learnings.ads.tree.{Node}
+import kalva.learnings.ads.tree.Node
 
 object MirroringTrees extends App {
 
