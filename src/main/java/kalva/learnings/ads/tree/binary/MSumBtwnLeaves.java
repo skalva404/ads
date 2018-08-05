@@ -7,9 +7,10 @@ public class MSumBtwnLeaves {
   static int total = 0;
   private static int sum;
   private static String pathToLeaf = "";
+  private static String pathLeafToLeaf = "";
 
   public static void main(String[] args) {
-    mSumBtwnLeaves(Node.createSampleTree());
+    mSumBtwnLeaves(Node.createSampleTree(), "");
     System.out.println(total);
     findMaxSumToLeaf(Node.createSampleTree(), 0, "");
     System.out.println(pathToLeaf + " => " + sum);
@@ -20,6 +21,7 @@ public class MSumBtwnLeaves {
       return;
     }
     localSum += root.getData();
+//    System.out.println(root.getData() + " ==> " + localSum);
     path += root.data + " ";
     if (localSum > sum) {
       sum = localSum;
@@ -29,18 +31,23 @@ public class MSumBtwnLeaves {
     findMaxSumToLeaf(root.getRight(), localSum, path);
   }
 
-  private static int mSumBtwnLeaves(Node root) {
+  private static int mSumBtwnLeaves(Node root, String path) {
     if (null == root) {
       return 0;
     }
-    if (null == root.getLeft() && null == root.getLeft()) {
+    if (null == root.getLeft() && null == root.getRight()) {
       return root.getData();
     }
-    int l = mSumBtwnLeaves(root.getLeft());
-    int r = mSumBtwnLeaves(root.getRight());
+    int l = mSumBtwnLeaves(root.getLeft(), path);
+    int r = mSumBtwnLeaves(root.getRight(), path);
+    int lSum = 0;
     if (null != root.getLeft() && null != root.getRight()) {
-      total = Math.max(total, root.data + l + r);
+      lSum = Math.max(total, root.data + l + r);
+//      System.out.println(l + " + " + r + " = " + total);
       return root.getData() + Math.max(l, r);
+    }
+    if (lSum > total) {
+      total = lSum;
     }
     return root.getData() +
         (null != root.getLeft() ? root.getLeft().getData() : root.getRight().getData());
