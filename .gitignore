@@ -1,2 +1,7 @@
 target
 .idea
+.gitignore
+.idea/
+ads.iml
+.DS_Store
+**/.DS_Store
