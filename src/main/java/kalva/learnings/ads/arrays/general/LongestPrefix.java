@@ -1,4 +1,4 @@
-package kalva.learnings.ads.arrays;
+package kalva.learnings.ads.arrays.general;
 
 /**
  * Given two positive integers X and Y, and an array arr[] of positive integers.

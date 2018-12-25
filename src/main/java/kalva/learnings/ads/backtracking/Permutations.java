@@ -1,12 +1,12 @@
 package kalva.learnings.ads.backtracking;
 
+//https://www.youtube.com/watch?v=nYFd7VHKyWQ
+//https://www.youtube.com/watch?v=iFafKAUGqrY
 public class Permutations {
 
   public static void main(String[] args) {
     permute("ABC", 0);
   }
-
-  static boolean mutate = true;
 
   private static void permute(String str, int left) {
     if (left == str.length() - 1) {

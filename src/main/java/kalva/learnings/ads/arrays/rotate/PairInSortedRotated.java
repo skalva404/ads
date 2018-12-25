@@ -6,7 +6,7 @@ package kalva.learnings.ads.arrays.rotate;
 public class PairInSortedRotated {
 
   public static void main(String[] args) {
-    pairInSortedRotated(new int[]{11, 15, 6, 8, 9, 10}, 16);
+    pairInSortedRotated(new int[]{11, 15, 1, 6, 8, 9, 10}, 16);
   }
 
   private static void pairInSortedRotated(int arr[], int x) {

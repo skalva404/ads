@@ -1,4 +1,4 @@
-package kalva.learnings.ads.arrays;
+package kalva.learnings.ads.arrays.general;
 
 import java.util.BitSet;
 

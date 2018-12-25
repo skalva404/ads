@@ -3,7 +3,7 @@ package kalva.learnings.ads.backtracking;
 /**
  * https://algorithms.tutorialhorizon.com/dynamic-programming-subset-sum-problem/
  */
-public class SubSetSum {
+public class SubSetSumOrCombination {
 
   private static void findSubsetSum(int a[], int sum, int index, int currSum, int sol[]) {
     if (index >= a.length) {

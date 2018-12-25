@@ -1,4 +1,4 @@
-package kalva.learnings.ads.arrays;
+package kalva.learnings.ads.arrays.general;
 
 public class MaxSumSubArry {
   public static void main(String[] args) {

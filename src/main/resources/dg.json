@@ -1,0 +1,14 @@
+{
+  "dataGeneration": [
+    {
+      "name": "FSM-db",
+      "type": "snapshot",
+      "ref": "url"
+    },
+    {
+      "name": "SRS",
+      "type": "jenkins",
+      "ref": "url"
+    }
+  ]
+}

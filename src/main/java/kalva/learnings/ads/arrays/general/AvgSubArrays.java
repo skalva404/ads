@@ -1,4 +1,4 @@
-package kalva.learnings.ads.arrays;
+package kalva.learnings.ads.arrays.general;
 
 public class AvgSubArrays {
   public static void main(String[] args) {
