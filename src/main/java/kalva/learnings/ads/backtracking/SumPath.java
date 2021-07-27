@@ -1,6 +1,6 @@
 package kalva.learnings.ads.backtracking;
 
-import kalva.learnings.ads.tree.Node;
+import kalva.learnings.ads.Node;
 
 /**
  * https://algorithms.tutorialhorizon.com/print-paths-in-binary-tree-with-sumx/

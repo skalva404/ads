@@ -1,7 +1,7 @@
 package kalva.learnings.ads.tree.binary;
 
 import kalva.learnings.ads.Utils;
-import kalva.learnings.ads.tree.Node;
+import kalva.learnings.ads.Node;
 
 public class MirrorAlternatives {
 

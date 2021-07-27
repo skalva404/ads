@@ -13,7 +13,7 @@ public class PairSum {
 
   public static void main(String[] args) {
     printPair(new int[]{1, 4, 45, 6, 10, -8}, 16);
-    printpairs(new int[]{1, 4, 45, 6, 10, -8}, 14);
+//    printpairs(new int[]{1, 4, 45, 6, 10, -8}, 14);
   }
 
   private static void printpairs(int arr[], int sum) {
@@ -41,7 +41,7 @@ public class PairSum {
       }
       if (localSum > sum) {
         r--;
-      } else if (localSum < sum) {
+      } else {
         l++;
       }
     }

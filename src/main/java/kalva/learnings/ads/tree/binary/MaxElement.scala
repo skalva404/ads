@@ -2,7 +2,7 @@ package kalva.learnings.ads.tree.binary
 
 import java.lang.Math.max
 
-import kalva.learnings.ads.tree.Node
+import kalva.learnings.ads.Node
 
 object MaxElement extends App {
 

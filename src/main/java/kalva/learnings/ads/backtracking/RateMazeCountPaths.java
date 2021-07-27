@@ -26,7 +26,7 @@ public class RateMazeCountPaths {
     return (x == N - 1) && (y == N - 1);
   }
 
-  private static int solveMaze(int x, int y) {
-    
-  }
+//  private static int solveMaze(int x, int y) {
+//
+//  }
 }

@@ -1,6 +1,6 @@
 package kalva.learnings.ads.tree.binary;
 
-import kalva.learnings.ads.tree.Node;
+import kalva.learnings.ads.Node;
 
 public class PrintAllLeafPaths {
 
@@ -13,7 +13,7 @@ public class PrintAllLeafPaths {
       return;
     }
     path += root.getData() + " ";
-    if (null == root.getLeft() && null == root.getLeft()) {
+    if (null == root.getRight()) {
       System.out.println(path);
     }
     printAllLeafPaths(root.getLeft(), path);

@@ -2,9 +2,9 @@ package kalva.learnings.ads.tree.binary;
 
 import java.util.Stack;
 
-import static kalva.learnings.ads.tree.Node.createSampleTree;
+import static kalva.learnings.ads.Node.createSampleTree;
 
-import kalva.learnings.ads.tree.Node;
+import kalva.learnings.ads.Node;
 
 public class IterativeOperations {
 

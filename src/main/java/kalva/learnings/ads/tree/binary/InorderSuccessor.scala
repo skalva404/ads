@@ -1,6 +1,6 @@
 package kalva.learnings.ads.tree.binary
 
-import kalva.learnings.ads.tree.{Node}
+import kalva.learnings.ads.Node
 
 object InorderSuccessor extends App {
 
@@ -38,17 +38,17 @@ object InorderSuccessor extends App {
     findInorderLeafNodesSuccessors(root.getRight)
   }
 
-  found = false
-  findInorderSuccessor(Node.createSampleTree(), 8)
-  found = false
-  findInorderSuccessor(Node.createSampleTree(), 9)
-  found = false
-  findInorderSuccessor(Node.createSampleTree(), 5)
-  found = false
-  findInorderSuccessor(Node.createSampleTree(), 6)
-  found = false
-  findInorderSuccessor(Node.createSampleTree(), 10)
-  println()
+//  found = false
+//  findInorderSuccessor(Node.createSampleTree(), 8)
+//  found = false
+//  findInorderSuccessor(Node.createSampleTree(), 9)
+//  found = false
+//  findInorderSuccessor(Node.createSampleTree(), 5)
+//  found = false
+//  findInorderSuccessor(Node.createSampleTree(), 6)
+//  found = false
+//  findInorderSuccessor(Node.createSampleTree(), 10)
+//  println()
   found = false
   findInorderLeafNodesSuccessors(Node.createSampleTree())
 }

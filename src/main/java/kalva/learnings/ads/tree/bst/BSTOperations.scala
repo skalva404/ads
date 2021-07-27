@@ -1,6 +1,6 @@
 package kalva.learnings.ads.tree.bst
 
-import kalva.learnings.ads.tree.Node
+import kalva.learnings.ads.Node
 
 object BSTOperations extends App {
 

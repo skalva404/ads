@@ -4,10 +4,10 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.Stack;
 
-import static kalva.learnings.ads.tree.Node.createSampleTree;
+import static kalva.learnings.ads.Node.createSampleTree;
 
 import kalva.learnings.ads.Utils;
-import kalva.learnings.ads.tree.Node;
+import kalva.learnings.ads.Node;
 
 public class LevelOrder {
 

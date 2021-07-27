@@ -25,9 +25,9 @@ public class LowestCommonAncesstor {
 
   public static void main(String[] args) {
     System.out.println(1 == lca(randomData(), 7, 10).data);
-    System.out.println(2 == lca(randomData(), 7, 5).data);
-    System.out.println(1 == lca(randomData(), 7, 6).data);
-    System.out.println(4 == lca(randomData(), 7, 4).data);
+//    System.out.println(2 == lca(randomData(), 7, 5).data);
+//    System.out.println(1 == lca(randomData(), 7, 6).data);
+//    System.out.println(4 == lca(randomData(), 7, 4).data);
   }
 
   /**

@@ -37,9 +37,9 @@ public class DuplicateSubTree {
    *                   /   \
    *                 2      3
    *               /  \       \
-   *             4     5      2
+   *             4     5       2
    *                          /  \
-   *                        4     6
+   *                        4     5
    * </pre>
    */
   private static Node randomData() {

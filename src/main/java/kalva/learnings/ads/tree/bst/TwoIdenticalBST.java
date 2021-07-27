@@ -2,7 +2,7 @@ package kalva.learnings.ads.tree.bst;
 
 import java.util.Objects;
 
-import kalva.learnings.ads.tree.Node;
+import kalva.learnings.ads.Node;
 
 public class TwoIdenticalBST {
 

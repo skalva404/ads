@@ -1,14 +1,14 @@
 package kalva.learnings.ads.tree.binary;
 
-import kalva.learnings.ads.tree.Node;
+import kalva.learnings.ads.Node;
 
 /**
  * * https://algorithms.tutorialhorizon.com/find-whether-if-a-given-binary-tree-is-balanced/
  * *                            5
  * *                      10         15
- * *                   20   25  30     35
- * *                                           40
- * *                                                45
+ * *                   20   25    30    35
+ * *                                       40
+ * *                                          45
  **/
 public class BalancedTree {
 

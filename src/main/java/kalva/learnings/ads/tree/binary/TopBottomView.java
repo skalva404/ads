@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Objects;
 
 import kalva.learnings.ads.Utils;
-import kalva.learnings.ads.tree.Node;
+import kalva.learnings.ads.Node;
 
 public class TopBottomView {
 

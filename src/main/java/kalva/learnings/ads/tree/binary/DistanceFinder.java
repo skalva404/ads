@@ -3,7 +3,8 @@ package kalva.learnings.ads.tree.binary;
 import java.util.ArrayList;
 import java.util.List;
 
-import kalva.learnings.ads.tree.Node;
+import kalva.learnings.ads.Node;
+import kalva.learnings.ads.Utils;
 
 public class DistanceFinder {
 
@@ -73,7 +74,7 @@ public class DistanceFinder {
   }
 
   public static void main(String[] args) {
-//    kDistanceNodesFromLeaf(Node.createSampleTree(), 1, Utils.height(Node.createSampleTree()), 0);
+    kDistanceNodesFromLeaf(Node.createSampleTree(), 1, Utils.height(Node.createSampleTree()), 0);
 //    kDistanceNodesFromRoot(Node.createSampleTree(), 3, 1);
 //    System.out.println(kDistanceFromLeaf);
 //    System.out.println(kDistanceFromroot);

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import kalva.learnings.ads.tree.Node;
+import kalva.learnings.ads.Node;
 
 public class NodesBwTwoGivenLevels {
 

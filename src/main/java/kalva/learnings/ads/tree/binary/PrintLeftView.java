@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import kalva.learnings.ads.Utils;
-import kalva.learnings.ads.tree.Node;
+import kalva.learnings.ads.Node;
 
 /**
  *https://algorithms.tutorialhorizon.com/print-left-view-of-a-given-binary-tree/

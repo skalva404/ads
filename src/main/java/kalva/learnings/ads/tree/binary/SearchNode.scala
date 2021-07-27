@@ -2,7 +2,7 @@ package kalva.learnings.ads.tree.binary
 
 import java.util
 
-import kalva.learnings.ads.tree.{Node}
+import kalva.learnings.ads.{Node}
 
 object SearchNode extends App {
 

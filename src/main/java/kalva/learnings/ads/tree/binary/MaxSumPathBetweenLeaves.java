@@ -1,6 +1,6 @@
 package kalva.learnings.ads.tree.binary;
 
-import kalva.learnings.ads.tree.Node;
+import kalva.learnings.ads.Node;
 
 public class MaxSumPathBetweenLeaves {
 
@@ -22,20 +22,20 @@ public class MaxSumPathBetweenLeaves {
     findMaxSumToLeaf(root.getRight(), localSum, path);
   }
 
-  private static int sumPathLeafNodes(Node root) {
-    if (null == root) {
+  private static int sumPathLeafNodes(Node node) {
+    if (null == node) {
       return 0;
     }
-    if (null == root.getLeft() && null == root.getRight()) {
-      return root.getData();
+    if (null == node.getLeft() && null == node.getRight()) {
+      return node.getData();
     }
-    int ls = sumPathLeafNodes(root.getLeft());
-    int rs = sumPathLeafNodes(root.getRight());
-    if (null != root.getLeft() && null != root.getRight()) {
-      result = Math.max(result, root.data + ls + rs);
-      return root.data + Math.max(ls, rs);
+    int ls = sumPathLeafNodes(node.getLeft());
+    int rs = sumPathLeafNodes(node.getRight());
+    if (null != node.getLeft() && null != node.getRight()) {
+      result = Math.max(result, node.data + ls + rs);
+      return node.data + Math.max(ls, rs);
     }
-    return root.getData() + (null != root.getLeft() ? root.getLeft().data : root.getRight().data);
+    return node.getData() + (null != node.getLeft() ? node.getLeft().data : node.getRight().data);
   }
 
   public static void main(String[] args) {

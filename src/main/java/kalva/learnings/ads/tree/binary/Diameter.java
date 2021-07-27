@@ -2,7 +2,7 @@ package kalva.learnings.ads.tree.binary;
 
 import java.util.List;
 
-import kalva.learnings.ads.tree.Node;
+import kalva.learnings.ads.Node;
 
 public class Diameter {
 

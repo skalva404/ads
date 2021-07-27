@@ -2,12 +2,12 @@ package kalva.learnings.ads.tree.binary;
 
 import java.util.Objects;
 
-import static kalva.learnings.ads.tree.Node.createSampleTree;
-import static kalva.learnings.ads.tree.Node.findNode;
-import static kalva.learnings.ads.tree.Node.leftMostNode;
-import static kalva.learnings.ads.tree.Node.rightMostNode;
+import static kalva.learnings.ads.Node.createSampleTree;
+import static kalva.learnings.ads.Node.findNode;
+import static kalva.learnings.ads.Node.leftMostNode;
+import static kalva.learnings.ads.Node.rightMostNode;
 
-import kalva.learnings.ads.tree.Node;
+import kalva.learnings.ads.Node;
 
 /**
  * We need to take care of 3 cases for any node to find its inorder successor as described below:

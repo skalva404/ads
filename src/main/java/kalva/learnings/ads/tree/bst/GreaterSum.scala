@@ -1,6 +1,6 @@
 package kalva.learnings.ads.tree.bst
 
-import kalva.learnings.ads.tree.{Node}
+import kalva.learnings.ads.{Node}
 import kalva.learnings.ads.tree.bst.BSTOperations.insert
 
 /**
